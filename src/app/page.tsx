@@ -1,7 +1,11 @@
 export default function Home() {
   return (
-    <div>
-      <h1>Hello, Next.js!</h1>
+    <div className="">
+      <p>SF Pro Bold Heading</p>
+      <p>
+        Roboto Regular Paragraph
+      </p>
+      <p>Roboto Bold Text</p>
     </div>
   );
 }
