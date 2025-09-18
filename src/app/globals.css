@@ -8,6 +8,10 @@
   --color-grayLight: #6a6a6a;
 }
 
+body {
+  @apply bg-black text-white pt-5 px-[150px];
+}
+
 .font-sfPro {
   font-family: "SF Pro", sans-serif;
 }
