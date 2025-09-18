@@ -1,9 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-    --breakpoint-sm: 480px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 976px;
-    --color-sky: #00ABFF;
-    --color-grayLight: #6A6A6A;
-} 
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px;
+  --color-sky: #00abff;
+  --color-grayLight: #6a6a6a;
+}
+
+.font-sfPro {
+  font-family: "SF Pro", sans-serif;
+}
