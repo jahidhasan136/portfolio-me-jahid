@@ -1,9 +1,10 @@
 import "./globals.css";
 import { Roboto } from "next/font/google";
 import localFont from "next/font/local";
+import ReduxProvider from "./redux/ReduxProvider";
 
 const roboto = Roboto({
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-roboto",
   display: "swap",
@@ -43,7 +44,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <ReduxProvider>
+        <body className={roboto.className}>{children}</body>
+      </ReduxProvider>
     </html>
   );
 }
