@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div className="">
-      <p>SF Pro Bold Heading</p>
+      <p className="text-grayLight text-4xl font-bold">SF Pro Bold Heading</p>
       <p>
         Roboto Regular Paragraph
       </p>
