@@ -4,15 +4,16 @@ import Image from "next/image";
 import React, { useState } from "react";
 import headerName from "../../../assets/header-name.svg";
 import Link from "next/link";
+import toast, { Toaster } from "react-hot-toast";
 
 const Header = () => {
-  const [copied, setCopied] = useState(false);
+  const [, setCopied] = useState(false);
 
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText("jh3495689@gmail.com");
       setCopied(true);
-
+      toast.success("Email copied to clipboard!");
       // Reset back after 1 second
       setTimeout(() => setCopied(false), 1000);
     } catch (err) {
@@ -33,10 +34,9 @@ const Header = () => {
         className="bg-grayDark px-4 py-2 rounded-full cursor-pointer"
         onClick={handleCopy}
       >
-        <p className="font-medium text-white text-base">
-          {copied ? "Copied!" : "jh3495689@gmail.com"}
-        </p>
+        <p className="font-medium text-white text-base">jh3495689@gmail.com</p>
       </div>
+      <Toaster position="bottom-right" reverseOrder={false} />
     </div>
   );
 };
