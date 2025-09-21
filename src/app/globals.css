@@ -13,7 +13,7 @@
 }
 
 body {
-  @apply bg-black text-white pt-5 px-[150px];
+  @apply bg-black text-white pt-11 md:pt-5 px-5 md:px-[150px];
 }
 
 .font-sfPro {

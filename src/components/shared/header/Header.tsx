@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-// images
+// Images
 import headerName from "../../../assets/header-name.svg";
 import barIcon from "../../../assets/header/barIcon.svg";
 import mailIcon from "../../../assets/header/mail.svg";
 import Link from "next/link";
+// Toaster
 import toast, { Toaster } from "react-hot-toast";
 
 const Header = () => {
@@ -29,16 +30,7 @@ const Header = () => {
         <Image
           src={headerName}
           alt="Logo"
-          width={106}
-          height={17}
-          className="md:hidden"
-        />
-        <Image
-          src={headerName}
-          alt="Logo"
-          width={197}
-          height={31}
-          className="xs:hidden md:flex"
+          className="w-[106px] h-[17px] md:w-[197px] md:h-[31px] md:flex"
         />
       </Link>
       <div className="flex items-center gap-10 text-base xs:hidden lg:flex">
@@ -52,6 +44,8 @@ const Header = () => {
       >
         <p className="font-medium text-white text-base">jh3495689@gmail.com</p>
       </div>
+
+      {/* Responsive */}
       <div className="cursor-pointer lg:hidden flex items-center xs:gap-2 md:gap-5">
         <Image
           onClick={handleCopy}
@@ -64,6 +58,7 @@ const Header = () => {
           <Image src={barIcon} alt="Bar Icon" width={24} height={24} />
         </div>
       </div>
+
       {/* add toaster to show notification */}
       <Toaster position="bottom-right" reverseOrder={false} />
     </div>
