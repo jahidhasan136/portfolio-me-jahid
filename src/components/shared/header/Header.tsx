@@ -11,6 +11,7 @@ import Link from "next/link";
 import toast, { Toaster } from "react-hot-toast";
 
 const Header = () => {
+  // Coppy email to clipboard
   const [, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -24,8 +25,14 @@ const Header = () => {
       console.error("Failed to copy: ", err);
     }
   };
+
+  // Responsive menu toggle
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleToggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
-    <div className="flex items-center justify-between">
+    <div className="relative flex items-center justify-between">
       <Link href="/">
         <Image
           src={headerName}
@@ -54,10 +61,24 @@ const Header = () => {
           width={20}
           height={17}
         />
-        <div className="cursor-pointer bg-[#1C1C1C] p-[10px] rounded-[5px] lg:hidden">
+        <div
+          onClick={() => handleToggleMenu()}
+          className="cursor-pointer bg-gray p-[10px] rounded-[5px] lg:hidden"
+        >
           <Image src={barIcon} alt="Bar Icon" width={24} height={24} />
         </div>
       </div>
+
+      {/* Show responsive menu toggle when clicked bar icon */}
+      {isMenuOpen && (
+        <div className="absolute top-[108px] bg-gray border border-grayDark">
+          <div>
+            <Link href="/services" className="text-sm hover:bg-grayDark">
+              Services
+            </Link>
+          </div>
+        </div>
+      )}
 
       {/* add toaster to show notification */}
       <Toaster position="bottom-right" reverseOrder={false} />
